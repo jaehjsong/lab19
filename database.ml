@@ -4,6 +4,9 @@ let dbsize = 100 ;;
 let db : (int, (string * int)) Hashtbl.t =
   Hashtbl.create dbsize ;;
 
+let find (id : id) : string * int =
+  Hashtbl.find db id ;;
+
 let create (id : id) (name : string) : unit =
   Hashtbl.add db id (name, 0) ;;
 
@@ -11,10 +14,12 @@ let exists (id : id) : bool =
   Hashtbl.mem db id ;;
 
 let balance (id : id) : int =
-  snd (Hashtbl.find db id) ;;
+  let _name, bal = find id
+  in bal ;;
 
 let name (id : id) : string =
-  fst (Hashtbl.find db id) ;;
+  let name, _bal = find id
+  in name ;;
 
 let update (id : id) (bal : int) : unit =
   let nam = name id in

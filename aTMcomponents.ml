@@ -1,7 +1,7 @@
 open Printf ;;
 open Scanf ;;
 
-module D = My_db ;;
+module D = Database ;;
 
 (* Customer account identifiers *)
 type id = int
