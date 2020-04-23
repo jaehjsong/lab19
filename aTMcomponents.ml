@@ -19,7 +19,9 @@ type account_spec = {name : string; id : id; balance : int} ;;
 
 let initialize (initial : account_spec list) : unit =
   initial
-  |> List.iter (fun {n; i; b} -> D.create i n; D.update i b) ;;
+  |> List.iter (fun {name; id; balance}
+                -> D.create id name;
+                  D.update id balance) ;;
 
 let rec acquire_id () : id =
    printf "type your account number please: ";

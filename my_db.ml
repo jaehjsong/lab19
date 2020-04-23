@@ -11,10 +11,10 @@ let exists (id : id) : bool =
   Hashtbl.mem db id ;;
 
 let balance (id : id) : int =
-  snd (Hashtble.find db id) ;;
+  snd (Hashtbl.find db id) ;;
 
 let name (id : id) : int =
-  fst (Hashtble.find db id) ;;
+  fst (Hashtbl.find db id) ;;
 
 let update (id : id) (bal : int) : unit =
   let nam = name id in
