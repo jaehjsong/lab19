@@ -13,7 +13,7 @@ let exists (id : id) : bool =
 let balance (id : id) : int =
   snd (Hashtbl.find db id) ;;
 
-let name (id : id) : int =
+let name (id : id) : string =
   fst (Hashtbl.find db id) ;;
 
 let update (id : id) (bal : int) : unit =
