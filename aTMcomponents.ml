@@ -1,7 +1,7 @@
 open Printf ;;
 open Scanf ;;
 
-module D = ATMcomponents ;;
+module D = My_db ;;
 
 (* Customer account identifiers *)
 type id = int
